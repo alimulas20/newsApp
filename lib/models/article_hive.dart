@@ -2,10 +2,12 @@ import 'article_model.dart';
 import 'package:hive/hive.dart';
 part 'article_hive.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: 1)
 class ArticleHive extends HiveObject {
+  @HiveField(0)
+  late String id;
   @HiveField(1)
-  late ArticleModelArticlesSource? source;
+  late String name;
   @HiveField(2)
   late String author;
   @HiveField(3)

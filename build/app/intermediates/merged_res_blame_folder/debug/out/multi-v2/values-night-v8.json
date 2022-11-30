@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\alimu\\Desktop\\task\\task\\newsApp-master\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\alimu\\Desktop\\task\\task\\newsApp\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\alimu\\Desktop\\task\\task\\newsApp-master\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\alimu\\Desktop\\task\\task\\newsApp\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

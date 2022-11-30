@@ -8,10 +8,11 @@ import 'package:news_app/models/article_hive.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Hive.initFlutter();
-  /*await */ Hive.openBox<ArticleHive>('ArticleHive');
-  /*Hive.registerAdapter(ArticleHiveAdapter());
-  var path = Directory.current.path;
+  await Hive
+    ..initFlutter()
+    ..registerAdapter(ArticleHiveAdapter())
+    ..openBox<ArticleHive>('ArticleHive');
+  /*var path = Directory.current.path;
   Hive.init(path);*/
   runApp(const MyApp());
 }

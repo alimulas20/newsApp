@@ -1,4 +1,4 @@
-#Wed Nov 30 15:46:11 TRT 2022
-base.0=C\:\\Users\\alimu\\Desktop\\task\\task\\newsApp-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Wed Nov 30 19:50:09 TRT 2022
+base.0=C\:\\Users\\alimu\\Desktop\\task\\task\\newsApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

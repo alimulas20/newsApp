@@ -5,7 +5,7 @@ import 'package:news_app/core/color_extension.dart';
 import 'package:news_app/core/context_extension.dart';
 import 'package:news_app/models/article_hive.dart';
 import 'package:news_app/models/article_model.dart';
-import '../widgets/boxes.dart';
+import 'package:news_app/widgets/boxes.dart';
 import 'package:news_app/pages/news_source.dart';
 import 'package:news_app/utils/locale_keys.dart';
 import 'package:news_app/utils/navigate.dart';
@@ -58,9 +58,10 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
               },
               icon: const Icon(Icons.share)),
           IconButton(
-              onPressed: () {
+              onPressed: () async {
                 final article_hive = ArticleHive()
-                  ..source = widget.articleModel.source
+                  ..id = widget.articleModel.source!.id ?? ""
+                  ..name = widget.articleModel.source!.name ?? ""
                   ..author = widget.articleModel.author ?? ""
                   ..title = widget.articleModel.title ?? ""
                   ..description = widget.articleModel.description ?? ""
@@ -68,8 +69,21 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
                   ..urlToImage = widget.articleModel.urlToImage ?? ""
                   ..publishedAt = widget.articleModel.publishedAt ?? ""
                   ..content = widget.articleModel.content ?? "";
+                await Hive.openBox<ArticleHive>('ArticleHive');
                 final box = Boxes.getArticleHive();
-                box.add(article_hive);
+                bool isadded = false;
+                int articleIndex = 0;
+                for (int i = 0; i < box.length; i++) {
+                  if (box.get(i)!.description == article_hive.description) {
+                    isadded = true;
+                    articleIndex = i;
+                  }
+                }
+                if (!isadded) {
+                  box.add(article_hive);
+                } else {
+                  box.delete(articleIndex);
+                }
               },
               icon: const Icon(Icons.favorite)),
         ],

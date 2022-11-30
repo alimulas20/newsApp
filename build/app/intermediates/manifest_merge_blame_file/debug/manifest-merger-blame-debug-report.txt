@@ -13,42 +13,42 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\debug\AndroidManifest.xml:7:5-66
-15-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\debug\AndroidManifest.xml:7:22-64
+15-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\debug\AndroidManifest.xml:7:22-64
 16    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-16-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:3:5-77
-16-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:3:22-74
+16-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:3:5-77
+16-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:3:22-74
 17
 18    <queries>
-18-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:4:5-17:15
+18-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:4:5-17:15
 19        <intent>
-19-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:5:9-8:18
+19-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:5:9-8:18
 20            <action android:name="android.intent.action.VIEW" />
-20-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:6:13-65
-20-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:6:21-62
+20-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:6:13-65
+20-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:6:21-62
 21
 22            <data android:scheme="https" />
-22-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:7:13-44
-22-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:7:19-41
+22-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:7:13-44
+22-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:7:19-41
 23        </intent>
 24        <intent>
-24-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:9:9-12:18
+24-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:9:9-12:18
 25            <action android:name="android.intent.action.DIAL" />
-25-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:10:13-65
-25-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:10:21-62
+25-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:10:13-65
+25-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:10:21-62
 26
 27            <data android:scheme="tel" />
-27-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:7:13-44
-27-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:7:19-41
+27-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:7:13-44
+27-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:7:19-41
 28        </intent>
 29        <intent>
-29-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:13:9-16:18
+29-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:13:9-16:18
 30            <action android:name="android.intent.action.SEND" />
-30-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:14:13-65
-30-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:14:21-62
+30-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:14:13-65
+30-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:14:21-62
 31
 32            <data android:mimeType="*/*" />
-32-->C:\Users\alimu\Desktop\task\task\newsApp-master\android\app\src\main\AndroidManifest.xml:7:13-44
+32-->C:\Users\alimu\Desktop\task\task\newsApp\android\app\src\main\AndroidManifest.xml:7:13-44
 33        </intent>
 34    </queries>
 35
@@ -97,31 +97,31 @@
 75            android:value="2" />
 76
 77        <provider
-77-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+77-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 78            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
-78-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-77
+78-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-77
 79            android:authorities="com.example.news_app.flutter.share_provider"
-79-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+79-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
 80            android:exported="false"
-80-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+80-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
 81            android:grantUriPermissions="true" >
-81-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+81-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
 82            <meta-data
-82-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:68
+82-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:68
 83                android:name="android.support.FILE_PROVIDER_PATHS"
-83-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+83-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
 84                android:resource="@xml/flutter_share_file_paths" />
-84-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp-master\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-65
+84-->[:share_plus] C:\Users\alimu\Desktop\task\task\newsApp\build\share_plus\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-65
 85        </provider>
 86
 87        <activity
-87-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp-master\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+87-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
 88            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-88-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp-master\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
+88-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 89            android:exported="false"
-89-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp-master\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+89-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
 90            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-90-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp-master\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+90-->[:url_launcher_android] C:\Users\alimu\Desktop\task\task\newsApp\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
 91
 92        <uses-library
 92-->[androidx.window:window:1.0.0-beta04] C:\Users\alimu\.gradle\caches\transforms-3\49bc944d29f70d45aa5add8e43e3247e\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
