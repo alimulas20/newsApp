@@ -23,11 +23,18 @@ class NewsDetailPage extends StatefulWidget {
 
   final ArticleModelArticles articleModel;
   bool isSearch;
+
   @override
   State<NewsDetailPage> createState() => _NewsDetailPageState();
 }
 
 class _NewsDetailPageState extends State<NewsDetailPage> {
+  bool _isAdded = false;
+
+  bool get isAdded => _isAdded;
+
+  Color _iconColor = Colors.white;
+
   Future<void> _onShare(BuildContext context, String url) async {
     final box = context.findRenderObject() as RenderBox?;
     await Share.share(url,
@@ -38,7 +45,7 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
   void initState() {
     //Hive.openBox<ArticleHive>('ArticleHive');
     if (Platform.isAndroid) WebView.platform = AndroidWebView();
-    /*
+
     final box = Boxes.getArticleHive();
     final articleHive = ArticleHive()
       ..id = widget.articleModel.source!.id ?? ""
@@ -50,24 +57,22 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
       ..urlToImage = widget.articleModel.urlToImage ?? ""
       ..publishedAt = widget.articleModel.publishedAt ?? ""
       ..content = widget.articleModel.content ?? "";
-    bool isadded = false;
-    int articleIndex = 0;
+    bool isAdded = false;
     for (int i = 0; i < box.length; i++) {
       if (box.getAt(i)!.description == articleHive.description) {
-        isadded = true;
-        articleIndex = i;
+        isAdded = true;
       }
     }
-    if (!isadded) {
-      print("ekli değil");
-    } else {
-      print("ekli ");
-    }*/
+    print(isAdded);
+    setState(() {
+      _iconColor = isAdded ? Colors.red : Colors.white;
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    bool isArticleAdded = _isAdded;
     return Scaffold(
       backgroundColor: context.colors.whiteColor,
       appBar: CustomAppbar(
@@ -83,34 +88,40 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
               },
               icon: const Icon(Icons.share)),
           IconButton(
-              onPressed: () async {
-                final articleHive = ArticleHive()
-                  ..id = widget.articleModel.source!.id ?? ""
-                  ..name = widget.articleModel.source!.name ?? ""
-                  ..author = widget.articleModel.author ?? ""
-                  ..title = widget.articleModel.title ?? ""
-                  ..description = widget.articleModel.description ?? ""
-                  ..url = widget.articleModel.url ?? ""
-                  ..urlToImage = widget.articleModel.urlToImage ?? ""
-                  ..publishedAt = widget.articleModel.publishedAt ?? ""
-                  ..content = widget.articleModel.content ?? "";
-                await Hive.openBox<ArticleHive>('ArticleHive');
-                final box = Boxes.getArticleHive();
-                bool isadded = false;
-                int articleIndex = 0;
-                for (int i = 0; i < box.length; i++) {
-                  if (box.getAt(i)!.description == articleHive.description) {
-                    isadded = true;
-                    articleIndex = i;
-                  }
+            icon: Icon(Icons.favorite, color: _iconColor),
+            onPressed: () async {
+              final articleHive = ArticleHive()
+                ..id = widget.articleModel.source!.id ?? ""
+                ..name = widget.articleModel.source!.name ?? ""
+                ..author = widget.articleModel.author ?? ""
+                ..title = widget.articleModel.title ?? ""
+                ..description = widget.articleModel.description ?? ""
+                ..url = widget.articleModel.url ?? ""
+                ..urlToImage = widget.articleModel.urlToImage ?? ""
+                ..publishedAt = widget.articleModel.publishedAt ?? ""
+                ..content = widget.articleModel.content ?? "";
+              await Hive.openBox<ArticleHive>('ArticleHive');
+              final box = Boxes.getArticleHive();
+              bool isadded = false;
+              int articleIndex = 0;
+              for (int i = 0; i < box.length; i++) {
+                if (box.getAt(i)!.description == articleHive.description) {
+                  isadded = true;
+                  articleIndex = i;
                 }
-                if (!isadded) {
-                  box.add(articleHive);
-                } else {
-                  box.deleteAt(articleIndex);
-                }
-              },
-              icon: const Icon(Icons.favorite)),
+              }
+              if (!isadded) {
+                box.add(articleHive);
+              } else {
+                box.deleteAt(articleIndex);
+              }
+              setState(() {
+                _iconColor = !isadded
+                    ? context.colors.redColor
+                    : context.colors.whiteColor;
+              });
+            },
+          ),
         ],
       ),
       body: Column(
@@ -154,7 +165,12 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
                           Row(
                             children: [
                               const Icon(Icons.calendar_month),
-                              Text(widget.articleModel.publishedAt.toString()),
+                              SizedBox(
+                                width: context.width * 0.25,
+                                child: Text(
+                                    widget.articleModel.publishedAt.toString(),
+                                    overflow: TextOverflow.ellipsis),
+                              ),
                             ],
                           )
                         ],

@@ -37,13 +37,16 @@ class _FavoritesState extends State<Favorites> {
           return box.isEmpty
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(
-                        height: context.width * 0.4,
-                        child: Image.asset(
-                          "assets/not_found.png",
-                          fit: BoxFit.fitWidth,
-                        )),
+                    Center(
+                      child: SizedBox(
+                          height: context.width * 0.4,
+                          child: Image.asset(
+                            "assets/not_found.png",
+                            fit: BoxFit.fitWidth,
+                          )),
+                    ),
                     context.emptyMediumWidget,
                     context.emptyHighWidget
                   ],

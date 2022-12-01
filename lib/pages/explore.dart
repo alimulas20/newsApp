@@ -31,9 +31,6 @@ class _ExploreState extends State<Explore> {
   List<ArticleModelArticles> searchList = [];
   List<ArticleModelArticles> fetchedArticles = [];
 
-
-
-
   search(value) {
     return FutureBuilder(
       future: AppService.searchArticles(value, _page),
@@ -59,8 +56,7 @@ class _ExploreState extends State<Explore> {
                           fit: BoxFit.fitWidth,
                         )),
                     context.emptyMediumWidget,
-                    Text(
-                        "\"$searchText\"    ",
+                    Text("\"$searchText\"    ",
                         style: TextStyle(
                           fontFamily: 'Rubik',
                           fontSize: 14,
@@ -118,15 +114,14 @@ class _ExploreState extends State<Explore> {
             textAlign: true,
             icon: const Icon(Icons.search),
             onEditingComplete: () {
+              FocusScope.of(context).unfocus();
               searchText = searchController.text;
               setState(() {
                 isSearch = true;
               });
             },
           ),
-
-          if (isSearch == false)
-            Container(),
+          if (isSearch == false) Container(),
           if (isSearch == true)
             Expanded(
               child: search(searchText),
