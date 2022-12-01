@@ -38,6 +38,31 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
   void initState() {
     //Hive.openBox<ArticleHive>('ArticleHive');
     if (Platform.isAndroid) WebView.platform = AndroidWebView();
+    /*
+    final box = Boxes.getArticleHive();
+    final articleHive = ArticleHive()
+      ..id = widget.articleModel.source!.id ?? ""
+      ..name = widget.articleModel.source!.name ?? ""
+      ..author = widget.articleModel.author ?? ""
+      ..title = widget.articleModel.title ?? ""
+      ..description = widget.articleModel.description ?? ""
+      ..url = widget.articleModel.url ?? ""
+      ..urlToImage = widget.articleModel.urlToImage ?? ""
+      ..publishedAt = widget.articleModel.publishedAt ?? ""
+      ..content = widget.articleModel.content ?? "";
+    bool isadded = false;
+    int articleIndex = 0;
+    for (int i = 0; i < box.length; i++) {
+      if (box.getAt(i)!.description == articleHive.description) {
+        isadded = true;
+        articleIndex = i;
+      }
+    }
+    if (!isadded) {
+      print("ekli değil");
+    } else {
+      print("ekli ");
+    }*/
     super.initState();
   }
 
@@ -74,7 +99,7 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
                 bool isadded = false;
                 int articleIndex = 0;
                 for (int i = 0; i < box.length; i++) {
-                  if (box.get(i)!.description == articleHive.description) {
+                  if (box.getAt(i)!.description == articleHive.description) {
                     isadded = true;
                     articleIndex = i;
                   }
@@ -82,7 +107,7 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
                 if (!isadded) {
                   box.add(articleHive);
                 } else {
-                  box.delete(articleIndex);
+                  box.deleteAt(articleIndex);
                 }
               },
               icon: const Icon(Icons.favorite)),

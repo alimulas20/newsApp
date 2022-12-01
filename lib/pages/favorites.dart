@@ -19,10 +19,9 @@ class Favorites extends StatefulWidget {
 
 class _FavoritesState extends State<Favorites> {
   ScrollController _controller = ScrollController();
-
   @override
   void initState() {
-    Hive.openBox<ArticleHive>('ArticleHive');
+    //Hive.openBox<ArticleHive>('ArticleHive');
     super.initState();
   }
 
@@ -56,16 +55,16 @@ class _FavoritesState extends State<Favorites> {
                     return (GestureDetector(
                       onTap: () {
                         final souce = ArticleModelArticlesSource()
-                          ..id = box.get(index)!.id
-                          ..name = box.get(index)!.name;
+                          ..id = box.getAt(index)!.id
+                          ..name = box.getAt(index)!.name;
                         final articles = ArticleModelArticles()
-                          ..author = box.get(index)!.author
-                          ..content = box.get(index)!.content
-                          ..description = box.get(index)!.description
-                          ..publishedAt = box.get(index)!.publishedAt
-                          ..title = box.get(index)!.title
-                          ..url = box.get(index)!.url
-                          ..urlToImage = box.get(index)!.urlToImage
+                          ..author = box.getAt(index)!.author
+                          ..content = box.getAt(index)!.content
+                          ..description = box.getAt(index)!.description
+                          ..publishedAt = box.getAt(index)!.publishedAt
+                          ..title = box.getAt(index)!.title
+                          ..url = box.getAt(index)!.url
+                          ..urlToImage = box.getAt(index)!.urlToImage
                           ..source = souce;
 
                         nextScreen(
@@ -89,7 +88,7 @@ class _FavoritesState extends State<Favorites> {
                               ),
                             ),
                             title: Text(
-                              box.get(index)!.title,
+                              box.getAt(index)!.title,
                               style: const TextStyle(
                                 fontFamily: 'Rubik',
                                 fontSize: 16,
@@ -97,7 +96,7 @@ class _FavoritesState extends State<Favorites> {
                               ),
                             ),
                             trailing: Image.network(
-                                box.get(index)!.urlToImage.toString())),
+                                box.getAt(index)!.urlToImage.toString())),
                       ),
                     ));
                   },
