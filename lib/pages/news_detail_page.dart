@@ -5,6 +5,7 @@ import 'package:news_app/core/color_extension.dart';
 import 'package:news_app/core/context_extension.dart';
 import 'package:news_app/models/article_hive.dart';
 import 'package:news_app/models/article_model.dart';
+import 'package:news_app/pages/favorites.dart';
 import 'package:news_app/widgets/boxes.dart';
 import 'package:news_app/pages/news_source.dart';
 import 'package:news_app/utils/locale_keys.dart';
@@ -22,7 +23,6 @@ class NewsDetailPage extends StatefulWidget {
 
   final ArticleModelArticles articleModel;
   bool isSearch;
-
   @override
   State<NewsDetailPage> createState() => _NewsDetailPageState();
 }
@@ -59,7 +59,7 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
               icon: const Icon(Icons.share)),
           IconButton(
               onPressed: () async {
-                final article_hive = ArticleHive()
+                final articleHive = ArticleHive()
                   ..id = widget.articleModel.source!.id ?? ""
                   ..name = widget.articleModel.source!.name ?? ""
                   ..author = widget.articleModel.author ?? ""
@@ -74,13 +74,13 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
                 bool isadded = false;
                 int articleIndex = 0;
                 for (int i = 0; i < box.length; i++) {
-                  if (box.get(i)!.description == article_hive.description) {
+                  if (box.get(i)!.description == articleHive.description) {
                     isadded = true;
                     articleIndex = i;
                   }
                 }
                 if (!isadded) {
-                  box.add(article_hive);
+                  box.add(articleHive);
                 } else {
                   box.delete(articleIndex);
                 }
