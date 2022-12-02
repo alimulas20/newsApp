@@ -13,6 +13,7 @@ import 'package:news_app/utils/navigate.dart';
 import 'package:news_app/widgets/custom_appbar.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:html/parser.dart';
 
 class NewsDetailPage extends StatefulWidget {
   NewsDetailPage({
@@ -29,7 +30,9 @@ class NewsDetailPage extends StatefulWidget {
 }
 
 class _NewsDetailPageState extends State<NewsDetailPage> {
-  bool _isAdded = false;
+  final bool _isAdded = false;
+
+  String contentString = "";
 
   bool get isAdded => _isAdded;
 
@@ -46,24 +49,15 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
     //Hive.openBox<ArticleHive>('ArticleHive');
     if (Platform.isAndroid) WebView.platform = AndroidWebView();
 
+    final document = parse(widget.articleModel.content.toString());
+    contentString = parse(document.body!.text).documentElement!.text;
     final box = Boxes.getArticleHive();
-    final articleHive = ArticleHive()
-      ..id = widget.articleModel.source!.id ?? ""
-      ..name = widget.articleModel.source!.name ?? ""
-      ..author = widget.articleModel.author ?? ""
-      ..title = widget.articleModel.title ?? ""
-      ..description = widget.articleModel.description ?? ""
-      ..url = widget.articleModel.url ?? ""
-      ..urlToImage = widget.articleModel.urlToImage ?? ""
-      ..publishedAt = widget.articleModel.publishedAt ?? ""
-      ..content = widget.articleModel.content ?? "";
     bool isAdded = false;
     for (int i = 0; i < box.length; i++) {
-      if (box.getAt(i)!.description == articleHive.description) {
+      if (box.getAt(i)!.description == widget.articleModel.description) {
         isAdded = true;
       }
     }
-    print(isAdded);
     setState(() {
       _iconColor = isAdded ? Colors.red : Colors.white;
     });
@@ -168,7 +162,9 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
                               SizedBox(
                                 width: context.width * 0.25,
                                 child: Text(
-                                    widget.articleModel.publishedAt.toString(),
+                                    widget.articleModel.publishedAt
+                                        .toString()
+                                        .split('T')[0],
                                     overflow: TextOverflow.ellipsis),
                               ),
                             ],
